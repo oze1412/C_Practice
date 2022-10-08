@@ -1,10 +1,10 @@
 #include<stdio.h>
 
-int main(void)
+int main_data_type(void)
 {
 	// data type == num
 
-	char a = 68;
+	char a = 65;
 	printf("%c\n", a);
 
 
@@ -14,6 +14,6 @@ int main(void)
 	printf("%c\n", b);
 	char c[] = "C"; // == char c = { 'C' };
 	printf("%s\n", &c);
-
+	
 	return 0;
 }

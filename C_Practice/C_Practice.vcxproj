@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="data_type_practice.c" />
     <ClCompile Include="HelloWorld_Practice.c" />
+    <ClCompile Include="IO.C" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

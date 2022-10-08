@@ -21,5 +21,8 @@
     <ClCompile Include="data_type_practice.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="IO.C">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
