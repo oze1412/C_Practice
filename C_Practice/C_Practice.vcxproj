@@ -130,6 +130,7 @@
     <ClCompile Include="data_type_practice.c" />
     <ClCompile Include="HelloWorld_Practice.c" />
     <ClCompile Include="IO.C" />
+    <ClCompile Include="operater_base.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

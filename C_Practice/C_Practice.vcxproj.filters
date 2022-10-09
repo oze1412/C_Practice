@@ -24,5 +24,8 @@
     <ClCompile Include="IO.C">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="operater_base.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
