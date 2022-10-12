@@ -127,9 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="control.c" />
     <ClCompile Include="data_type_practice.c" />
     <ClCompile Include="HelloWorld_Practice.c" />
+    <ClCompile Include="interation.c" />
     <ClCompile Include="IO.C" />
+    <ClCompile Include="operater_app.c" />
     <ClCompile Include="operater_base.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -27,5 +27,14 @@
     <ClCompile Include="operater_base.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="operater_app.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="control.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="interation.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
