@@ -1,6 +1,9 @@
 #include<stdio.h>
 #include<math.h>
 
+//int GetNum(void);
+//void Print(int* arr);
+
 int main_array_use(void)
 {
 	// 선택정렬로 알려진 버블정렬
@@ -240,7 +243,7 @@ int main_array_use(void)
 
 	// 연습 9-2
 
-	int b_snail[5][5] = { 0 };
+	/*int b_snail[5][5] = { 0 };
 	int i = 0, x = 5, y = 0, nCounter = 0, offset = 1, cube = 0;
 
 	cube = 2 * sqrt(sizeof(b_snail) / sizeof(type(b_snail))) - 1;
@@ -262,7 +265,106 @@ int main_array_use(void)
 		for (x = 0; x < 5; x++)
 			printf("%d\t", b_snail[y][x]);
 		putchar('\n');
+	}*/
+
+
+	// 연습(선택정렬로 알려진 버블정렬 - 내림차순)
+
+	/*int Num[5] = { 0 };
+	int* pNum = Num;
+	int i = 0, j = 0, nTmp = 0;
+
+	for (i = 0; i < 5; i++)
+		Num[i] = GetNum();
+
+	for (i = 0; i < 4; i++)
+	{
+		for (j = i + 1; j < 5; j++)
+		{
+			if (Num[i] < Num[j])
+			{
+				nTmp = Num[i];
+				Num[i] = Num[j];
+				Num[j] = nTmp;
+			}
+		}
 	}
+
+	Print(pNum);*/
+
+
+	// 연습(버블정렬 - 오름차순)
+
+	/*int Num[5] = { 0 };
+	int* pNum = Num;
+	int i = 0, j = 0, nTmp = 0;
+
+	for (i = 0; i < 5; i++)
+		Num[i] = GetNum();
+
+	for (i = 1; i < 5; i++)
+	{
+		for (j = 0; j < 5 - i; j++)
+		{
+			if (Num[j] > Num[j + 1])
+			{
+				nTmp = Num[j];
+				Num[j] = Num[j + 1];
+				Num[j + 1] = nTmp;
+			}
+		}
+	}
+
+	Print(pNum);*/
+
+	
+	// 연습(선택정렬 - 내림차순)
+
+	/*int Num[5] = { 0 };
+	int* pNum = Num;
+	int i = 0, j = 0, nTmp = 0, std = 0;
+
+	for (i = 0; i < 5; i++)
+		Num[i] = GetNum();
+
+	for (i = 0; i < 4; i++)
+	{
+		std = i;
+		for (j = i + 1; j < 5; j++)
+		{
+			if (Num[std] < Num[j])
+				std = j;
+		}
+
+		if (std != i)
+		{
+			nTmp = Num[std];
+			Num[std] = Num[i];
+			Num[i] = nTmp;
+		}
+	}
+
+	Print(pNum);*/
 
 	return 0;
 }
+
+
+/*int GetNum(void)
+{
+	int nInput = 0;
+
+	printf("숫자를 입력하세요 : ");
+	scanf_s("%d", &nInput);
+
+	return nInput;
+}
+
+void Print(int* arr)
+{
+	int i = 0;
+	for (i = 0; i < 5; i++)
+	{
+		printf("%d ", *(arr + i));
+	}
+}*/

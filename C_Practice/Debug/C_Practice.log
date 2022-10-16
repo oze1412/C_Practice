@@ -1,0 +1,15 @@
+﻿  array.c
+  array_use.c
+C:\Users\AnSG\source\repos\C_Practice\C_Practice\array_use.c(246,43): warning C4013: 'type'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\AnSG\source\repos\C_Practice\C_Practice\array_use.c(246,59): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  control.c
+  data_type_practice.c
+  function.c
+  HelloWorld_Practice.c
+  interation.c
+  IO.C
+  operater_app.c
+  operater_base.c
+  pointer.c
+  코드를 생성하고 있습니다...
+  C_Practice.vcxproj -> C:\Users\AnSG\source\repos\C_Practice\Debug\C_Practice.exe
