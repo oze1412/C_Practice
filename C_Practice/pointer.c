@@ -3,7 +3,9 @@
 #include<stdlib.h>
 #include<malloc.h>
 
-int main(void)
+//void PointerResult(char** pData);
+
+int main_pointer(void)
 {
 	// 주소 번지 연산자
 
@@ -187,7 +189,7 @@ int main(void)
 
 	// 문자열 검색
 
-	char szBuffer[32] = { "I am a boy." };
+	/*char szBuffer[32] = { "I am a boy." };
 	char* szp1 = strstr(szBuffer, "am");
 	char szData[5] = { 0 };
 	char* szp2 = strstr(szBuffer, "boy");
@@ -203,14 +205,91 @@ int main(void)
 	strncpy_s(szData, sizeof(szData), szp1, 2);
 	printf("%s\n", szData);
 	strncpy_s(szData, sizeof(szData), szp2, 3);
-	printf("%s\n", szData);
+	printf("%s\n", szData);*/
+
+	
+	// 배열 연산자 풀어쓰기
+
+	/*char szBuffer[32] = { "You are a girl" };
+
+	printf("%c\n", szBuffer[0]);
+	printf("%c\n", *szBuffer);
+	printf("%c\n", * (szBuffer + 0));
+
+	printf("%c\n", szBuffer[5]);
+	printf("%c\n", *(szBuffer + 5));
+
+	printf("%s\n", &szBuffer[4]);
+	printf("%s\n", &*(szBuffer + 4));
+	printf("%s\n", szBuffer + 4);*/
 
 
+	// realloc; sprintf;
+
+	/*char* pszBuffer = NULL, * pszNewBuffer = NULL;
+
+	pszBuffer = (char*)malloc(sizeof(char) * 12);
+	sprintf_s(pszBuffer, _msize(pszBuffer), "%s", "TestString");
+	printf("[%p] %d %s\n", pszBuffer, _msize(pszBuffer), pszBuffer);
+
+	pszNewBuffer = (char*)realloc(pszBuffer, 32);
+	if (pszNewBuffer == NULL)
+		free(pszBuffer);
+
+	sprintf_s(pszNewBuffer, _msize(pszNewBuffer), "%s", "TestStringData");
+	printf("[%p] %d %s\n", pszNewBuffer, _msize(pszNewBuffer), pszNewBuffer);
+
+	free(pszNewBuffer);*/
 
 
+	// gets_s
 
+	/*char* pszBuffer = NULL;
 
+	pszBuffer = (char*)malloc(sizeof(char) * 12);
+	gets_s(pszBuffer, _msize(pszBuffer));
+	puts(pszBuffer);
 
+	free(pszBuffer);*/
 
+	
+	// char* 배열
+
+	/*char* astrList[3] = { "Hello", "World", "String" };
+
+	printf("%s\n", astrList[0]);
+	printf("%s\n", astrList[1]);
+	printf("%s\n\n", astrList[2]);
+
+	printf("%s\n", astrList[0] + 1);
+	printf("%s\n", astrList[1] + 2);
+	printf("%s\n\n", astrList[2] + 3);
+
+	printf("%c\n", astrList[0][3]);
+	printf("%c\n", astrList[1][3]);
+	printf("%c\n\n", astrList[2][3]);
+
+	PointerResult(astrList);*/
+
+	
 	return 0;
 }
+
+//void PointerResult(char** pData)
+//{
+//	int i = 0;
+//	for (i = 0; i < 3; i++)
+//		printf("%c\n", **(pData + i));
+//	putchar('\n');
+//
+//	for (i = 0; i < 3; i++)
+//		printf("%c\n", *(*pData + i));
+//	putchar('\n');
+//
+//	for (i = 0; i < 3; i++)
+//		printf("%c\n", *(*(pData + i )+i));
+//	putchar('\n');
+//
+//	for (i = 0; i < 3; i++)
+//		printf("%c\n", **pData + i);
+//}

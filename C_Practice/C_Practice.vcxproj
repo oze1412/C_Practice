@@ -139,6 +139,7 @@
     <ClCompile Include="operater_app.c" />
     <ClCompile Include="operater_base.c" />
     <ClCompile Include="pointer.c" />
+    <ClCompile Include="pointer2.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
