@@ -1,2 +1,8 @@
-﻿  pointer2.c
+﻿  func_app.c
+C:\Users\AnSG\source\repos\C_Practice\C_Practice\func_app.c(86,26): warning C4047: '!=': 'int'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\AnSG\source\repos\C_Practice\C_Practice\func_app.c(82,13): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\AnSG\source\repos\C_Practice\C_Practice\func_app.c(101,15): warning C4047: 'return': 'int'의 간접 참조 수준이 'int *'과(와) 다릅니다.
+C:\Users\AnSG\source\repos\C_Practice\C_Practice\func_app.c(181,14): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\AnSG\source\repos\C_Practice\C_Practice\func_app.c(181,37): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\AnSG\source\repos\C_Practice\C_Practice\func_app.c(101): warning C4172: 지역 변수 또는 임시: nData의 주소를 반환하고 있습니다.
   C_Practice.vcxproj -> C:\Users\AnSG\source\repos\C_Practice\x64\Debug\C_Practice.exe
