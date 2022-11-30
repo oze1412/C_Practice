@@ -5,240 +5,240 @@
 #include <time.h>
 #include <conio.h>
 
-int Add(int *a, int *b)
-{
-	return *a + *b;
-}
-
-void InitList(int* pList, int nSize)
-{
-	for (int i = 0; i < nSize; i++)
-	{
-		printf("정수를 입력하세요 : ");
-		scanf_s("%d", &pList[i]);
-	}
-}
-
-void SortList(int* pList, int nSize)
-{
-	int nTmp = 0;
-
-	for (int i = 0; i < nSize - 1; i++)
-		for(int j = i + 1; j < nSize; j++)
-			if (pList[i] > pList[j])
-			{
-				nTmp = pList[i];
-				pList[i] = pList[j];
-				pList[j] = nTmp;
-			}
-}
-
-void PrintList(int* pList, int nSize)
-{
-	for (int i = 0; i < nSize; i++)
-		printf("%d", pList[i]);
-	putchar('\n');
-}
-
-void GetName(char* pszName, int nSize)
-{
-	printf("이름을 입력하세요 : ");
-	gets_s(pszName, nSize);
-}
-
-char* GetNameP(void)
-{
-	char* pszName = NULL;
-
-	pszName = (char*)calloc(32, sizeof(char));
-
-	printf("이름을 입력하세요 : ");
-	gets_s(pszName, sizeof(char) * 32);
-
-	return pszName;
-}
-
-void Swap(int *a, int *b)
-{
-	int nTmp = 0;
-
-	nTmp = *a;
-	*a = *b;
-	*b = nTmp;
-}
-
-int GetLength(const char* pszParam)
-{
-	int nLength = 0;
-
-	while (pszParam[nLength] != '\0')
-		nLength++;
-
-	return nLength;
-}
-
-int MyStrcpy(char* strDst, int DstSize, char* strSrc)
-{
-	int nLen = strlen(strSrc), i = 0;
-	if (nLen + 1 > DstSize)
-		return DstSize - (nLen + 1);
-
-	while (strSrc[i] != NULL)
-	{
-		strDst[i] = strSrc[i];
-		i++;
-	}
-	
-	strDst[i] = '\0';
-
-	return nLen;
-}
-
-int NeverUse(void)
-{
-	int nData = 10;
-
-	return &nData;
-}
-
-int GetFactorial(int nParam)
-{
-	int nResult = 0;
-
-	if (nParam == 1)		return 1;
-
-	nResult = nParam * GetFactorial(nParam - 1);
-
-	return nResult;
-}
-
-void PutData(char* pszParam)
-{
-	if (*pszParam == '\0')	return;
-
-	putchar(*pszParam);
-
-	PutData(pszParam + 1);
-}
-
-char* MyStrcat(char* pszDst, char* pszSrc)
-{
-	while (*pszDst != '\0')
-		++pszDst;
-
-	while (*pszSrc != '\0')
-		*pszDst++ = *pszSrc++;
-	*++pszDst = '\0';
-
-	return --pszDst;
-}
-
-void GetString(char* pBuffer, int pSize, char* name)
-{
-	printf("Input %s : ", name);
-	gets_s(pBuffer, pSize);
-}
-
-int StrScaner(char* strDst, char* strSrc)
-{
-	int idx = 0;
-	while (strDst[idx] != '\0')
-	{
-		if (strDst[idx] == strSrc[0])
-			if (strncmp(strDst + idx, strSrc, strlen(strSrc)) == 0)
-				return idx;
-
-		idx++;
-	}
-
-	return -1;
-}
-
-void SortString(char* list[], int size)
-{
-	char* pTmp;
-	for(int i = 0; i < size - 1; i++)
-		for(int j = i + 1; j < size; j++)
-			if (strcmp(list[i], list[j]) > 0)
-			{
-				pTmp = list[i];
-				list[i] = list[j];
-				list[j] = pTmp;
-			}
-}
-
-int GetTotal(int* sumList, int column, int row)
-{
-	int total = 0, size = column * row;
-	for (int i = 0; i < size; i++)
-		total += sumList[i];
-
-	return total;
-}
-
-int MyStrcmp(char* p_dst, char* p_src)
-{
-	int len_1 = strlen(p_dst), len_2 = strlen(p_src), i = 0;
-	if (len_1 != len_2)
-		return 1;
-
-	for(i = 0; i < len_1; i++)
-	{
-		if (isupper(*(p_dst + i)) != 0)
-			*(p_dst + i) = tolower(*(p_dst + i));
-		if (isupper(*(p_src + i)) != 0)
-			*(p_src + i) = tolower(*(p_src + i));
-		if (*(p_dst + i) != *(p_src + i))
-			return 1;
-	}
-
-	return 0;
-}
-
-typedef struct
-{
-	int num;
-	char RSP[32];
-}input_data;
-
-void Game_RSP(int AI, int User)
-{
-	char* trans[3] = { "ROCK", "SCISSOR", "PAPER" };
-
-	if (User > 2 || User < 0)
-	{
-		printf("입력값이 잘못되었습니다.\n");
-	}
-	else if (AI == User)
-	{
-		printf("AI : %s, User : %s\n", trans[AI], trans[User]);
-		printf("YOU DRAW");
-	}
-	else
-	{
-		if ((User + 1) % 3 == AI)
-		{
-			printf("AI : %s, User : %s\n", trans[AI], trans[User]);
-			printf("YOU WIN");
-		}
-		else
-		{
-			printf("AI : %s, User : %s\n", trans[AI], trans[User]);
-			printf("YOU LOSE");
-		}
-	}
-}
-
-void AfterDay(int add)
-{
-	time_t cur_time = time(NULL);
-	struct tm ptime = { 0 };
-	cur_time += add * 60 * 60 * 24;
-
-	localtime_s(&ptime, &cur_time);
-
-	printf("%04d-%02d-%02d\n", ptime.tm_year + 1900, ptime.tm_mon + 1, ptime.tm_mday);
-}
+//int Add(int *a, int *b)
+//{
+//	return *a + *b;
+//}
+//
+//void InitList(int* pList, int nSize)
+//{
+//	for (int i = 0; i < nSize; i++)
+//	{
+//		printf("정수를 입력하세요 : ");
+//		scanf_s("%d", &pList[i]);
+//	}
+//}
+//
+//void SortList(int* pList, int nSize)
+//{
+//	int nTmp = 0;
+//
+//	for (int i = 0; i < nSize - 1; i++)
+//		for(int j = i + 1; j < nSize; j++)
+//			if (pList[i] > pList[j])
+//			{
+//				nTmp = pList[i];
+//				pList[i] = pList[j];
+//				pList[j] = nTmp;
+//			}
+//}
+//
+//void PrintList(int* pList, int nSize)
+//{
+//	for (int i = 0; i < nSize; i++)
+//		printf("%d", pList[i]);
+//	putchar('\n');
+//}
+//
+//void GetName(char* pszName, int nSize)
+//{
+//	printf("이름을 입력하세요 : ");
+//	gets_s(pszName, nSize);
+//}
+//
+//char* GetNameP(void)
+//{
+//	char* pszName = NULL;
+//
+//	pszName = (char*)calloc(32, sizeof(char));
+//
+//	printf("이름을 입력하세요 : ");
+//	gets_s(pszName, sizeof(char) * 32);
+//
+//	return pszName;
+//}
+//
+//void Swap(int *a, int *b)
+//{
+//	int nTmp = 0;
+//
+//	nTmp = *a;
+//	*a = *b;
+//	*b = nTmp;
+//}
+//
+//int GetLength(const char* pszParam)
+//{
+//	int nLength = 0;
+//
+//	while (pszParam[nLength] != '\0')
+//		nLength++;
+//
+//	return nLength;
+//}
+//
+//int MyStrcpy(char* strDst, int DstSize, char* strSrc)
+//{
+//	int nLen = strlen(strSrc), i = 0;
+//	if (nLen + 1 > DstSize)
+//		return DstSize - (nLen + 1);
+//
+//	while (strSrc[i] != NULL)
+//	{
+//		strDst[i] = strSrc[i];
+//		i++;
+//	}
+//	
+//	strDst[i] = '\0';
+//
+//	return nLen;
+//}
+//
+//int NeverUse(void)
+//{
+//	int nData = 10;
+//
+//	return &nData;
+//}
+//
+//int GetFactorial(int nParam)
+//{
+//	int nResult = 0;
+//
+//	if (nParam == 1)		return 1;
+//
+//	nResult = nParam * GetFactorial(nParam - 1);
+//
+//	return nResult;
+//}
+//
+//void PutData(char* pszParam)
+//{
+//	if (*pszParam == '\0')	return;
+//
+//	putchar(*pszParam);
+//
+//	PutData(pszParam + 1);
+//}
+//
+//char* MyStrcat(char* pszDst, char* pszSrc)
+//{
+//	while (*pszDst != '\0')
+//		++pszDst;
+//
+//	while (*pszSrc != '\0')
+//		*pszDst++ = *pszSrc++;
+//	*++pszDst = '\0';
+//
+//	return --pszDst;
+//}
+//
+//void GetString(char* pBuffer, int pSize, char* name)
+//{
+//	printf("Input %s : ", name);
+//	gets_s(pBuffer, pSize);
+//}
+//
+//int StrScaner(char* strDst, char* strSrc)
+//{
+//	int idx = 0;
+//	while (strDst[idx] != '\0')
+//	{
+//		if (strDst[idx] == strSrc[0])
+//			if (strncmp(strDst + idx, strSrc, strlen(strSrc)) == 0)
+//				return idx;
+//
+//		idx++;
+//	}
+//
+//	return -1;
+//}
+//
+//void SortString(char* list[], int size)
+//{
+//	char* pTmp;
+//	for(int i = 0; i < size - 1; i++)
+//		for(int j = i + 1; j < size; j++)
+//			if (strcmp(list[i], list[j]) > 0)
+//			{
+//				pTmp = list[i];
+//				list[i] = list[j];
+//				list[j] = pTmp;
+//			}
+//}
+//
+//int GetTotal(int* sumList, int column, int row)
+//{
+//	int total = 0, size = column * row;
+//	for (int i = 0; i < size; i++)
+//		total += sumList[i];
+//
+//	return total;
+//}
+//
+//int MyStrcmp(char* p_dst, char* p_src)
+//{
+//	int len_1 = strlen(p_dst), len_2 = strlen(p_src), i = 0;
+//	if (len_1 != len_2)
+//		return 1;
+//
+//	for(i = 0; i < len_1; i++)
+//	{
+//		if (isupper(*(p_dst + i)) != 0)
+//			*(p_dst + i) = tolower(*(p_dst + i));
+//		if (isupper(*(p_src + i)) != 0)
+//			*(p_src + i) = tolower(*(p_src + i));
+//		if (*(p_dst + i) != *(p_src + i))
+//			return 1;
+//	}
+//
+//	return 0;
+//}
+//
+//typedef struct
+//{
+//	int num;
+//	char RSP[32];
+//}input_data;
+//
+//void Game_RSP(int AI, int User)
+//{
+//	char* trans[3] = { "ROCK", "SCISSOR", "PAPER" };
+//
+//	if (User > 2 || User < 0)
+//	{
+//		printf("입력값이 잘못되었습니다.\n");
+//	}
+//	else if (AI == User)
+//	{
+//		printf("AI : %s, User : %s\n", trans[AI], trans[User]);
+//		printf("YOU DRAW");
+//	}
+//	else
+//	{
+//		if ((User + 1) % 3 == AI)
+//		{
+//			printf("AI : %s, User : %s\n", trans[AI], trans[User]);
+//			printf("YOU WIN");
+//		}
+//		else
+//		{
+//			printf("AI : %s, User : %s\n", trans[AI], trans[User]);
+//			printf("YOU LOSE");
+//		}
+//	}
+//}
+//
+//void AfterDay(int add)
+//{
+//	time_t cur_time = time(NULL);
+//	struct tm ptime = { 0 };
+//	cur_time += add * 60 * 60 * 24;
+//
+//	localtime_s(&ptime, &cur_time);
+//
+//	printf("%04d-%02d-%02d\n", ptime.tm_year + 1900, ptime.tm_mon + 1, ptime.tm_mday);
+//}
 
 int main_func_app(void)
 {
@@ -551,10 +551,10 @@ int main_func_app(void)
 	
 	// 연습문제 4
 
-	char szData_1[32] = { "HELLO, WORLD, BYE" };
+	/*char szData_1[32] = { "HELLO, WORLD, BYE" };
 	char szData_2[32] = { "Hello, World, Bye" };
 
-	printf("%d\n", MyStrcmp(szData_1, szData_2));
+	printf("%d\n", MyStrcmp(szData_1, szData_2));*/
 
 
 	// 연습문제 5
@@ -567,7 +567,7 @@ int main_func_app(void)
 
 	// 연습문제 6
 
-	AfterDay(1000);
+	/*AfterDay(1000);*/
 
 
 
